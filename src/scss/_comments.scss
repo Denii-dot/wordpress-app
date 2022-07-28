@@ -2,9 +2,9 @@
   &__container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
+    align-items: left;
     @media (min-width: 60rem) {
+      justify-items: center;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.1rem;
     }
