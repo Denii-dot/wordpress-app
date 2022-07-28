@@ -1,0 +1,14 @@
+.trends {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 550px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+    }
+    @media (min-width: 70rem) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+  }
+}

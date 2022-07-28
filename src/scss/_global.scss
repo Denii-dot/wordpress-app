@@ -1,0 +1,162 @@
+//Available fonts:
+// font-family: 'Roboto', sans-serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: $veryLightGray;
+}
+
+a,
+a:hover,
+a:visited {
+  color: $veryLightGray;
+  text-decoration: none;
+}
+
+.h4--profile {
+  text-align: left;
+  width: 100%;
+  color: gray;
+}
+
+.button--navbar {
+  padding: 1rem 2rem;
+  transition: all 300ms ease-in-out;
+  border-radius: 0.875rem;
+  &.active,
+  &:hover {
+    background-color: $primaryColor;
+    filter: brightness(85%);
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: $font-med;
+  margin-bottom: 0.875rem;
+}
+.button {
+  display: block;
+  background-color: lightblue;
+  padding: 0.125rem 0;
+  border-radius: 0.25rem;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  @media (min-width: 600px) {
+    padding: 0.25rem 0.5rem;
+  }
+  @media (min-width: 1120) {
+    text-align: left;
+  }
+  &:hover {
+    filter: brightness(85%);
+  }
+}
+
+.button--loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > button {
+    background-color: $navbarColor;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      filter: brightness(85%);
+    }
+  }
+}
+
+.paragraph {
+  text-transform: capitalize;
+  color: $grayisBlue;
+  text-align: ceneter;
+}
+
+.hide-for-desktop {
+  @media (min-width: 70rem) {
+    display: none;
+  }
+}
+.hide-for-mobile {
+  @media (max-width: 70rem) {
+    display: none;
+  }
+}
+
+.container {
+  width: 70vw;
+  margin: 0 auto;
+  @media (min-width: 1040) {
+    max-width: 65rem; //1040px
+  }
+
+  &--pa {
+    padding: 1.0625rem 1.5rem;
+  }
+}
+
+section.content {
+  min-height: 80vh;
+  background-color: $white;
+  border-radius: 20px;
+}
+
+.line {
+  width: 80%;
+  height: 2px;
+  background-color: $grayisBlue;
+  border-radius: 2px;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.has-fade {
+  visibility: hidden;
+  z-index: 1;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 400ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
+}

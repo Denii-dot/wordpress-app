@@ -1,0 +1,23 @@
+.comments {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    @media (min-width: 60rem) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.1rem;
+    }
+    @media (min-width: 70rem) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  &__line {
+    width: 80%;
+    height: 2px;
+    background-color: $grayisBlue;
+    border-radius: 2px;
+    margin-bottom: 2.25rem;
+  }
+}

@@ -1,0 +1,15 @@
+.taxonomy {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    @media (min-width: 34.375rem) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+    @media (min-width: 70rem) {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+  }
+}
