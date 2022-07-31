@@ -27,7 +27,7 @@ function Comment({ comment }) {
         <h2>Post</h2>
         <p>
           <b>Title: </b>
-          {comment.post.title}
+          <span className="comment__title">{comment.post.title}</span>
         </p>
       </div>
       <div className="comment__author">

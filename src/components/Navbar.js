@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Logo from "../assets/wordpressLogo.png";
 import { NavLink, Outlet } from "react-router-dom";
 import { BsFillFilePostFill } from "react-icons/bs";
@@ -9,9 +9,33 @@ import { FiTrendingUp } from "react-icons/fi";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const overlay = useRef(null);
+  const secondMenu = useRef(null);
 
   useEffect(() => {
+    //add classes to overlay and second menu but not on
+
+    if (
+      !overlay.current.classList.contains("fade-in") &&
+      !overlay.current.classList.contains("fade-out") &&
+      open
+    ) {
+      overlay.current.classList.add("fade-in");
+      secondMenu.current.classList.add("fade-in");
+    } else if (secondMenu.current.classList.contains("fade-in")) {
+      overlay.current.classList.remove("fade-in");
+      secondMenu.current.classList.remove("fade-in");
+      overlay.current.classList.add("fade-out");
+      secondMenu.current.classList.add("fade-out");
+    } else if (secondMenu.current.classList.contains("fade-out")) {
+      overlay.current.classList.add("fade-in");
+      secondMenu.current.classList.add("fade-in");
+      overlay.current.classList.remove("fade-out");
+      secondMenu.current.classList.remove("fade-out");
+    }
+
     if (open) {
+      //Add no-scroll and scroll to on body
       document.body.classList.add("noscroll");
       window.scrollTo({
         top: 0,
@@ -24,13 +48,16 @@ function Navbar() {
 
   return (
     <>
-      <div
-        className={`overlay has-fade ${open ? "fade-in" : "fade-out"}`}
-      ></div>
+      <div ref={overlay} className={"overlay has-fade"}></div>
       <div className="navbar">
         <div className="navbar__content container container--pa">
           <NavLink to="/">
-            <img src={Logo} alt="" className="navbar__logo" />
+            <img
+              src={Logo}
+              alt=""
+              className="navbar__logo"
+              onClick={() => setOpen(false)}
+            />
           </NavLink>
           <div className="navbar__links hide-for-mobile">
             <NavLink to="/trends" className="button--navbar">
@@ -63,7 +90,7 @@ function Navbar() {
             <span></span>
           </div>
         </div>
-        <div className={`second has-fade ${open ? "fade-in" : "fade-out"}`}>
+        <div className={"second has-fade"} ref={secondMenu}>
           <NavLink
             to="/trends"
             className="button--navbar"

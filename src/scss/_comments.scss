@@ -2,11 +2,11 @@
   &__container {
     display: grid;
     grid-template-columns: 1fr;
-    align-items: left;
+    gap: 1rem;
+    justify-items: center;
     @media (min-width: 55rem) {
-      justify-items: center;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.1rem;
+      gap: 0.7rem;
     }
     @media (min-width: 70rem) {
       grid-template-columns: repeat(3, 1fr);
