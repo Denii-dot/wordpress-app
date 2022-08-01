@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    @media (min-width: 60rem) {
+    @media (min-width: 50rem) {
       grid-template-columns: repeat(2, 1fr);
       gap: 0.7rem;
     }
