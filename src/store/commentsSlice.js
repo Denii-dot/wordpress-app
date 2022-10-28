@@ -22,7 +22,7 @@ export const fetchComments = createAsyncThunk(
           post: {
             id: comment.post.ID,
             title: comment.post.title,
-            linke: comment.post.link,
+            link: comment.post.link,
           },
           author: {
             id: comment.author.ID,

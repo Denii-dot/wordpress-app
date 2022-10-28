@@ -59,7 +59,7 @@ function Profile() {
                   <Post post={post} key={post.ID} />
                 ))
               ) : (
-                <h4 className="h4--profile">No categories to display</h4>
+                <h4 className="h4--profile">No posts to display</h4>
               )}
             </div>
             <h2 className="header">For later posts:</h2>
@@ -71,7 +71,7 @@ function Profile() {
                     <Post post={post} key={post.ID} />
                   ))
                 ) : (
-                  <h4 className="h4--profile">No categories to display</h4>
+                  <h4 className="h4--profile">No posts to display</h4>
                 )}
               </div>
             </div>
@@ -86,7 +86,7 @@ function Profile() {
                     <Comment comment={comment} key={comment.id} />
                   ))
                 ) : (
-                  <h4 className="h4--profile">No categories to display</h4>
+                  <h4 className="h4--profile">No comments to display</h4>
                 )}
               </div>
               <h2 className="header">For later comments:</h2>
@@ -97,13 +97,13 @@ function Profile() {
                     <Comment comment={comment} key={comment.id} />
                   ))
                 ) : (
-                  <h4 className="h4--profile">No categories to display</h4>
+                  <h4 className="h4--profile">No comments to display</h4>
                 )}
               </div>
             </div>
           </div>
           <div className="taxonomy">
-            <h2 className="header">Liked categories:</h2>
+            <h2 className="header">Liked taxonomy:</h2>
             <div className="line"></div>
             <div className="container">
               <div className="taxonomy__container">
@@ -112,10 +112,10 @@ function Profile() {
                     <Category category={category} key={category.id} />
                   ))
                 ) : (
-                  <h4 className="h4--profile">No categories to display</h4>
+                  <h4 className="h4--profile">No taxonomy to display</h4>
                 )}
               </div>
-              <h2 className="header">For later categories:</h2>
+              <h2 className="header">For later taxonomy:</h2>
               <div className="line"></div>
               <div className="taxonomy__container">
                 {profile.taxonomyForLater.length ? (
@@ -123,13 +123,13 @@ function Profile() {
                     <Category category={category} key={category.id} />
                   ))
                 ) : (
-                  <h4 className="h4--profile">No categories to display</h4>
+                  <h4 className="h4--profile">No taxonomy to display</h4>
                 )}
               </div>
             </div>
           </div>
           <div className="trends">
-            <h2 className="header">Liked tags:</h2>
+            <h2 className="header">Liked trends:</h2>
             <div className="line"></div>
             <div className="container">
               <div className="trends__container">
@@ -138,10 +138,10 @@ function Profile() {
                     <Trend trend={trend} key={trend.id} />
                   ))
                 ) : (
-                  <h4 className="h4--profile">No categories to display</h4>
+                  <h4 className="h4--profile">No trends to display</h4>
                 )}
               </div>
-              <h2 className="header">For later tags:</h2>
+              <h2 className="header">For later trends:</h2>
               <div className="line"></div>
               <div className="trends__container">
                 {profile.trendsForLater.length ? (
@@ -149,7 +149,7 @@ function Profile() {
                     <Trend trend={trend} key={trend.id} />
                   ))
                 ) : (
-                  <h4 className="h4--profile">No categories to display</h4>
+                  <h4 className="h4--profile">No trends to display</h4>
                 )}
               </div>
             </div>

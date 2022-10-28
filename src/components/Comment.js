@@ -9,12 +9,12 @@ function Comment({ comment }) {
   const [url, setURL] = useState("");
   const goToPost = useCallback(async () => {
     try {
-      const response = (await axios.get(comment.post.linke)).data.URL;
+      const response = (await axios.get(comment.post.link)).data.URL;
       setURL(response);
     } catch (error) {
       throw new Error(error.message);
     }
-  }, [comment.post.linke]);
+  }, [comment.post.link]);
 
   useEffect(() => {
     goToPost();
